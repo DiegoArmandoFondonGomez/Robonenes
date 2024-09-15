@@ -1,0 +1,23 @@
+---
+- # ====== List of Values: LOV_TASKS ===========================
+  id: 38917701663910136261
+  identification: 
+    name: LOV_TASKS
+
+  subscription: 
+    version-number: 15569842384569
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select EBA_TASKS_SS.ID as ID,
+          EBA_TASKS_SS.TASK_NAME as TASK_NAME 
+       from EBA_TASKS_SS EBA_TASKS_SS
+
+  column-mapping: 
+    return: ID
+    display: TASK_NAME
+    default-sort: TASK_NAME
+    sort-direction: Ascending (Nulls Last)
+

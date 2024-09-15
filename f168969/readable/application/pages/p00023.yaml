@@ -1,0 +1,173 @@
+---
+# ====== Page: Landing =======================================
+id: 23
+identification: 
+  name: Landing
+  alias: LANDING
+  title: Landing
+
+appearance: 
+  page-mode: Normal
+  page-template: Minimal (No Navigation)
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: true
+
+css: 
+  inline: |
+    body {
+      background-image: url(#APP_FILES#serenaBackgroundLanding.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    
+    .t-Header {
+        display: none;
+    }
+    
+    .t-Footer {
+        display: none;
+    }
+    
+    .custom-logo {
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    .custom-header {
+        padding: 1rem 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: end;
+    }
+    
+    .custom-nav {
+        width: fit;
+    }
+    
+    .main-button {
+        background: white !important;
+    }
+    
+    .custom-nav a {
+        padding: 0.5rem;
+        margin: 0rem 0.5rem;
+        border-radius: 0.5rem;
+        border: 3px solid black;
+        background: rgba(255,255,255,0.5);
+        color: black;
+        min-width: 6rem;
+        text-align: center;
+        display: inline-block;
+        box-shadow: 10px 10px 58px 0px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 10px 10px 58px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 10px 10px 58px 0px rgba(0,0,0,0.5);
+    }
+    
+    .landing-info {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    @font-face {
+     font-family: "Wondra";
+     src: url(#APP_FILES#Wondra.otf);
+    }
+    
+    .landing-title {
+        font-family: "Wondra" !important;
+        color: #2f3652ff;
+        font-size: 4rem;
+        line-height: 1;
+    }
+    
+    .landing-login {
+        color: white;
+        border-radius: 1rem;
+        border: solid 4px rgb(43, 50, 77);
+        background: #2f3652ff;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    
+    .t-Body {
+        display: none;
+    }
+
+html-header: 
+  html-header: |
+    <div class="custom-header">
+        <nav class="custom-nav">
+            <a href="f?p=&APP_ID.:5:&SESSION." class="main-button" id="sign-up">Sign Up</a>
+            <a href="f?p=&APP_ID.:9999:&SESSION.">Log In</a>
+        </nav>
+    </div>
+    <div class="landing-info">
+        <h1 class="landing-title">SERENA</h1>
+        <h3 class="landing-subtitle">Be like a Bee</h3>
+        <p class="landing-description">Start a habit, be organized, change your life</p>
+        <a class="landing-login" href="f?p=&APP_ID.:5:&SESSION.">Start now!</a>
+    </div>
+
+security: 
+  authentication: Page Is Public
+  deep-linking: Application Default
+  page-access-protection: Arguments Must Have Checksum
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-meta-tags: false
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+processes: 
+- # ====== Process: Redirect Login =============================
+  id: 38784213502598071410
+  identification: 
+    name: Redirect Login
+    type: Execute Code
+    execution-chain: None
+
+  source: 
+    location: Local Database
+    language: PL/SQL
+    pl/sql-code: |
+      declare
+          l_user varchar2(100);
+          l_url  varchar2(32767);
+      begin
+          -- Check if the user is authenticated
+          l_user := apex_custom_auth.get_user;
+      
+          if l_user is not null and l_user != 'nobody' then
+              -- User is authenticated, generate URL for Page 2
+              l_url := apex_page.get_url(
+                  p_page => 1
+              );
+      
+              -- Redirect to Page 2
+              apex_util.redirect_url(l_url);
+          end if;
+      end;
+
+  execution: 
+    sequence: 10
+    point: Before Header
+    run-process: Once Per Page Visit (default)
+

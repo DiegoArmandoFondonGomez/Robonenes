@@ -1,0 +1,285 @@
+---
+# ====== Application: Serena App =============================
+identification: 
+  name: Serena App
+  alias: SERENA-APP
+  version: Release 1.0
+
+row-search: 
+  tokenize: true
+  text-query-function: None
+
+availability: 
+  status: Available with Developer Toolbar
+  build-status: Run and Build Application
+
+error-handling: 
+  default-display-location: Inline with Field and in Notification
+
+report-printing: 
+  type: Use Instance Settings
+
+advanced: 
+  friendly-urls: true
+  allow-feedback: true
+  logging: true
+  debugging: false
+  compatibility-mode: 21.2 to 24.1
+  accessible-read-only-items: true
+  pass-ecid: Y
+
+authentication: 
+  public-user: APEX_PUBLIC_USER
+  authentication-scheme: Serena-Auth # 38747166986725193619
+
+authorization: 
+  source-for-role-or-group-schemes: Access Control User Role Assignments
+
+session-management: 
+  rejoin-sessions: Enabled for Public Sessions
+
+session-state-protection: 
+  enabled: true
+
+security: 
+  deep-linking: Disabled
+  browser-cache: Disabled
+  embed-in-frames: Deny
+  referrer-policy: strict-origin
+  html-escaping-mode: Extended
+  http-response-headers: Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'nonce-1234567890'"
+
+database-session: 
+  parsing-schema: WKSP_SERENA
+
+globalization: 
+  primary-language: English (en)
+  document-direction: Left-To-Right
+  language-derived-from: Application Primary Language
+  automatic-time-zone: true
+  automatic-csv-encoding: true
+
+application-format-masks: 
+  date: DS
+  date-time: 'DD-MON-YYYY HH:MIPM'
+  timestamp: DS
+  timestamp-time-zone: DS
+
+character-value-comparison: 
+  behavior: Database session NLS setting (default)
+
+logo: 
+  type: Text
+  text: Serena App
+
+progressive-web-app: 
+  enable: true
+  installable: true
+  display: Fullscreen
+  screen-orientation: Natural
+  theme-color: '#848484'
+  background-color: '#828282'
+  ios-status-bar-style: Default
+  app-description: Interactive Habit Tracking App
+  enable-push-notifications: true
+  pwa-push-notifications-credentials: App 168969 Push Notifications Credentials (2) # 38790928994609281404
+
+navigation: 
+  home-url: 
+    url: 'f?p=&APP_ID.:23:&SESSION.'
+    page: 23 # Landing
+
+  login-url: 
+    url: 'f?p=&APP_ID.:9999:&SESSION.'
+    page: 9999 # Login Page
+
+navigation-menu: 
+  list-template: Side Navigation Menu
+  template-options: 
+  - '#DEFAULT#'
+  - js-defaultCollapsed
+  - js-navCollapsed--hidden
+  - t-TreeNav--styleA
+  list-position: Side
+  list: Navigation Menu # 38683755641834592724
+
+navigation-bar: 
+  implementation: List
+  list: Navigation Bar # 38684044975208592939
+  list-template: Navigation Bar
+  template-options: 
+  - '#DEFAULT#'
+
+javascript: 
+  include-jquery-migrate: false
+
+attributes: 
+  theme: Universal Theme # 42
+  global-page: 0
+  enable-end-users-to-choose-theme-style: false
+  add-"built-with-apex"-to-footer: false
+  auto-dismiss-success-messages: false
+
+substitutions: 
+- # ====== Substitution: APP_NAME ==============================
+  id: 1
+  identification: 
+    name: APP_NAME
+
+  value: 
+    static-value: Serena App
+
+component-settings: 
+- # ====== Component Setting: NATIVE_OPEN_AI_ASSISTANT =========
+  id: 38683750678340592720
+  identification: 
+    name: NATIVE_OPEN_AI_ASSISTANT
+    type: Dynamic Action
+
+  subscription: 
+    version-number: 15569307617562
+
+- # ====== Component Setting: NATIVE_COLOR_PICKER ==============
+  id: 38683750928536592720
+  identification: 
+    name: NATIVE_COLOR_PICKER
+    type: Item
+
+  settings: 
+    attribute-1: FULL
+    attribute-2: POPUP
+
+  subscription: 
+    version-number: 15569307617595
+
+- # ====== Component Setting: NATIVE_DATE_PICKER_APEX ==========
+  id: 38683751243716592721
+  identification: 
+    name: NATIVE_DATE_PICKER_APEX
+    type: Item
+
+  settings: 
+    attribute-1: 'MONTH-PICKER:YEAR-PICKER:TODAY-BUTTON'
+    attribute-2: VISIBLE
+    attribute-3: 15
+    attribute-4: FOCUS
+
+  subscription: 
+    version-number: 15569307617612
+
+- # ====== Component Setting: NATIVE_GEOCODED_ADDRESS ==========
+  id: 38683751531849592721
+  identification: 
+    name: NATIVE_GEOCODED_ADDRESS
+    type: Item
+
+  settings: 
+    attribute-1: RELAX_HOUSE_NUMBER
+    attribute-2: N
+    attribute-3: 'POPUP:ITEM'
+    attribute-4: default
+    attribute-6: LIST
+
+  subscription: 
+    version-number: 15569307617630
+
+- # ====== Component Setting: NATIVE_SELECT_MANY ===============
+  id: 38683751858937592721
+  identification: 
+    name: NATIVE_SELECT_MANY
+    type: Item
+
+  settings: 
+    attribute-1: separated
+
+  subscription: 
+    version-number: 15569307617646
+
+- # ====== Component Setting: NATIVE_SINGLE_CHECKBOX ===========
+  id: 38683752133976592721
+  identification: 
+    name: NATIVE_SINGLE_CHECKBOX
+    type: Item
+
+  settings: 
+    attribute-1: Y
+    attribute-2: N
+
+  subscription: 
+    version-number: 15569307617669
+
+- # ====== Component Setting: NATIVE_STAR_RATING ===============
+  id: 38683752454158592721
+  identification: 
+    name: NATIVE_STAR_RATING
+    type: Item
+
+  settings: 
+    attribute-1: fa-star
+    attribute-4: '#VALUE#'
+
+  subscription: 
+    version-number: 15569307617697
+
+- # ====== Component Setting: NATIVE_YES_NO ====================
+  id: 38683752776783592721
+  identification: 
+    name: NATIVE_YES_NO
+    type: Item
+
+  settings: 
+    attribute-1: Y
+    attribute-3: N
+    attribute-5: SWITCH_CB
+
+  subscription: 
+    version-number: 15569307617717
+
+- # ====== Component Setting: NATIVE_GEOCODING =================
+  id: 38683753049092592722
+  identification: 
+    name: NATIVE_GEOCODING
+    type: Process
+
+  settings: 
+    attribute-1: RELAX_HOUSE_NUMBER
+
+  subscription: 
+    version-number: 15569307617730
+
+- # ====== Component Setting: NATIVE_DISPLAY_SELECTOR ==========
+  id: 38683753369995592722
+  identification: 
+    name: NATIVE_DISPLAY_SELECTOR
+    type: Region
+
+  subscription: 
+    version-number: 15569307617764
+
+- # ====== Component Setting: NATIVE_IR ========================
+  id: 38683753660470592722
+  identification: 
+    name: NATIVE_IR
+    type: Region
+
+  subscription: 
+    version-number: 15569307617787
+
+- # ====== Component Setting: NATIVE_MAP_REGION ================
+  id: 38683753982913592722
+  identification: 
+    name: NATIVE_MAP_REGION
+    type: Region
+
+  subscription: 
+    version-number: 15569307617828
+
+- # ====== Component Setting: NATIVE_ADFBC =====================
+  id: 38683754243973592722
+  identification: 
+    name: NATIVE_ADFBC
+    type: REST Data Source
+
+  subscription: 
+    version-number: 15569307617904
+

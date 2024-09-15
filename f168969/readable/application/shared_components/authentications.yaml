@@ -1,0 +1,43 @@
+---
+- # ====== Authentication: Oracle APEX Accounts ================
+  id: 38683754865718592723
+  identification: 
+    name: Oracle APEX Accounts
+
+  subscription: 
+    version-number: 15569307618120
+
+  settings: 
+    type: Oracle APEX Accounts
+
+  session-not-valid: 
+    redirect-to: Login Page
+
+  login-processing: 
+    switch-in-session: false
+
+  real-application-security: 
+    ras-mode: Disabled
+
+- # ====== Authentication: Serena-Auth =========================
+  id: 38747166986725193619
+  identification: 
+    name: Serena-Auth
+
+  subscription: 
+    version-number: 15569512459717
+
+  settings: 
+    type: Custom
+    authentication-function-name: SRN_AUTH_PKG.custom_authenticate
+    enable-legacy-authentication-attributes: false
+
+  session-not-valid: 
+    redirect-to: Login Page
+
+  login-processing: 
+    switch-in-session: false
+
+  real-application-security: 
+    ras-mode: Disabled
+

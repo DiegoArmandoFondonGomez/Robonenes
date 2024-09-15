@@ -1,0 +1,91 @@
+---
+- # ====== Static Application File: icons/app-icon-32.png ======
+  id: 38684046041772592942
+  identification: 
+    file-name: icons/app-icon-32.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: icons/app-icon-144-rounded.p
+  id: 38684046398198592943
+  identification: 
+    file-name: icons/app-icon-144-rounded.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: icons/app-icon-192.png =====
+  id: 38684046653346592943
+  identification: 
+    file-name: icons/app-icon-192.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: icons/app-icon-256-rounded.p
+  id: 38684046967358592943
+  identification: 
+    file-name: icons/app-icon-256-rounded.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: icons/app-icon-512.png =====
+  id: 38684047215449592944
+  identification: 
+    file-name: icons/app-icon-512.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: Icon Bckg Light 1.png ======
+  id: 38727351633241921858
+  identification: 
+    file-name: Icon Bckg Light 1.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: Icon Light 2.png ===========
+  id: 38729357658377728616
+  identification: 
+    file-name: Icon Light 2.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: Wondra.otf =================
+  id: 38745642202435162738
+  identification: 
+    file-name: Wondra.otf
+
+  attributes: 
+    mime-type: font/otf
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: NuevaFokinAbejtia.svg ======
+  id: 38769290521130006927
+  identification: 
+    file-name: NuevaFokinAbejtia.svg
+
+  attributes: 
+    mime-type: image/svg+xml
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: serenaBackgroundLanding.png 
+  id: 38868752067559751319
+  identification: 
+    file-name: serenaBackgroundLanding.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
